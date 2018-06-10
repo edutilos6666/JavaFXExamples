@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class Example2 extends Application {
+public class VBoxHBoxExample extends Application {
     public static void main(String[] args) {
         launch(args);
     }

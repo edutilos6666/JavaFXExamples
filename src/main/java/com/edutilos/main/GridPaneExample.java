@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class Example1 extends Application {
+public class GridPaneExample extends Application {
     public static void main(String[] args) {
         launch(args);
     }
