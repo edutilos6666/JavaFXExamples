@@ -1,0 +1,21 @@
+.label {
+    -fx-font-size: 20px;
+}
+/*
+.button {
+    -fx-font-size: 25px;
+    -fx-pref-width:100px;
+    -fx-pref-height: 50px;
+}
+*/
+
+#ttt_cell {
+    -fx-font-size: 25px;
+    -fx-pref-width:100px;
+    -fx-pref-height: 50px;
+}
+
+
+.text-area {
+    -fx-font-size: 20px;
+}
