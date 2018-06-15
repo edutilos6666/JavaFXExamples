@@ -2,7 +2,7 @@ package com.edutilos.main.tableView;
 
 import com.edutilos.main.*;
 import com.edutilos.main.chart.*;
-import javafx.application.Application;
+import com.edutilos.main.serializer.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.Scene;
@@ -164,9 +164,63 @@ public class WorkerExample extends Stage {
         });
 
 
-        menuBar.getMenus().addAll(menuTV, menuMisc, menuChart);
+        //menu Serializers
+        Menu menuSerializers = new Menu("Serializers");
+        MenuItem itemWriteIntoXML = new MenuItem("Write Into XML");
+        MenuItem itemWriteIntoCSV = new MenuItem("Write Into CSV");
+        MenuItem itemWriteIntoJSON = new MenuItem("Write Into JSON");
+        MenuItem itemReadFromXML = new MenuItem("Read From XML");
+        MenuItem itemReadFromCSV = new MenuItem("Read from CSV");
+        MenuItem itemReadFromJSON = new MenuItem("Read From JSON");
+        menuSerializers.getItems().addAll(itemWriteIntoXML, itemWriteIntoCSV, itemWriteIntoJSON,
+                itemReadFromXML, itemReadFromCSV, itemReadFromJSON);
+
+
+        WorkerXMLSerializer xmlSerializer = new WorkerXMLSerializer();
+        WorkerCSVSerializer csvSerializer = new WorkerCSVSerializer();
+        WorkerJSONSerializer jsonSerializer = new WorkerJSONSerializer();
+        String xmlFile = "Workers.xml";
+        String csvFile = "Workers.csv";
+        String jsonFile = "Workers.json";
+
+        itemWriteIntoXML.setOnAction(handler->{
+            xmlSerializer.writeIntoXML(Utils.convertObserableListToClassicList(data),xmlFile);
+        });
+
+        itemReadFromXML.setOnAction(handler->{
+            String content = xmlSerializer.readFromXMLAsString(xmlFile);
+            WorkerXMLStage stage = new WorkerXMLStage(content);
+            stage.showAndWait();
+        });
+
+
+        itemWriteIntoCSV.setOnAction(handler->{
+            csvSerializer.writeIntoCSV(Utils.convertObserableListToClassicList(data),csvFile);
+        });
+
+        itemReadFromCSV.setOnAction(handler->{
+            String content = csvSerializer.readFromCSVAsString(csvFile);
+            WorkerCSVStage stage = new WorkerCSVStage(content);
+            stage.showAndWait();
+        });
+
+
+
+        itemWriteIntoJSON.setOnAction(handler->{
+            jsonSerializer.writeIntoJSON(Utils.convertObserableListToClassicList(data),jsonFile);
+        });
+
+        itemReadFromJSON.setOnAction(handler->{
+            String content = jsonSerializer.readFromJSONAsString(jsonFile);
+            WorkerJSONStage stage = new WorkerJSONStage(content);
+            stage.showAndWait();
+        });
+
+        menuBar.getMenus().addAll(menuTV, menuMisc, menuChart, menuSerializers);
         root0.setTop(menuBar);
     }
+
+
 
     private void addComponents() {
         root = new VBox();

@@ -1,0 +1,17 @@
+<?xml version='version_number' encoding='UTF-8' standalone='standalone_status' ?>
+<Workers>
+<Worker>
+<Id>1</Id>
+<Name>foo</Name>
+<Age>10</Age>
+<Wage>100.0</Wage>
+<Active>true</Active>
+</Worker>
+<Worker>
+<Id>1</Id>
+<Name>foo</Name>
+<Age>10</Age>
+<Wage>100.0</Wage>
+<Active>true</Active>
+</Worker>
+</Workers>

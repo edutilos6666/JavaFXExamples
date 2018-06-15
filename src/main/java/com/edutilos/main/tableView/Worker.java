@@ -57,4 +57,15 @@ public class Worker {
         activeProp.set(active);
     }
 
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder("Worker{");
+        sb.append(idProp.get()).append(",")
+                .append(nameProp.get()).append(",")
+                .append(ageProp.get()).append(",")
+                .append(wageProp.get()).append(",")
+                .append(activeProp.get()).append("}");
+        return sb.toString();
+    }
 }
