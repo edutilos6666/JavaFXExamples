@@ -12,9 +12,9 @@ import javafx.stage.Stage;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class GridPaneExample extends Application {
-    public static void main(String[] args) {
-        launch(args);
+public class GridPaneExample extends Stage {
+    public GridPaneExample() {
+        setStage();
     }
 
     //properties
@@ -24,13 +24,11 @@ public class GridPaneExample extends Application {
     private TextField fieldId, fieldName, fieldAge, fieldWage, fieldActive;
     private Button btnOk , btnClear;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void setStage() {
         addComponents();
         registerEvents();
         scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.setScene(scene);
     }
 
     private void addComponents() {

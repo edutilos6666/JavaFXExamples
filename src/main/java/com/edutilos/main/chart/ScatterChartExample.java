@@ -16,9 +16,9 @@ import java.util.Random;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class ScatterChartExample extends Application{
-    public static void main(String[] args) {
-        launch(args);
+public class ScatterChartExample extends Stage{
+    public ScatterChartExample() {
+        setStage();
     }
 
     //properties
@@ -32,13 +32,11 @@ public class ScatterChartExample extends Application{
     private String[] barLabels = {"Chrome", "Firefox", "Edge", "Safari", "IE10", "IE11"};
     private String[] mainLabels = {"Year 2010","Year 2011", "Year 2011", "Year 2012" };
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+   public void setStage()  {
         addComponents();
         registerEvents();
         scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.setScene(scene);
     }
 
     private void addComponents() {

@@ -14,9 +14,9 @@ import javafx.stage.Stage;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class VBoxHBoxExample extends Application {
-    public static void main(String[] args) {
-        launch(args);
+public class VBoxHBoxExample extends Stage {
+    public VBoxHBoxExample() {
+        setStage();
     }
 
     //properties
@@ -27,13 +27,11 @@ public class VBoxHBoxExample extends Application {
     private Button btnOk , btnClear;
     private HBox hbId, hbName, hbAge, hbWage, hbActive, hbButtons;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void setStage() {
         addComponents();
         registerEvents();
         scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.setScene(scene);
     }
 
     private void addComponents() {

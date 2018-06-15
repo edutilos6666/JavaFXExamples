@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 /**
  * Created by edutilos on 14.06.18.
  */
-public class TictactoeExample extends Application {
+public class TictactoeExample extends Stage {
     //properties
     private VBox root;
     private Label lblPicker;
@@ -24,18 +24,18 @@ public class TictactoeExample extends Application {
     private GridPane paneCells;
     private Button btnRestart;
 
-    public static void main(String[] args) {
-        launch(args);
+    public TictactoeExample() {
+        setStage();
     }
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+
+    public void setStage() {
         addComponents();
         registerEvents();
         Scene scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
+        this.setScene(scene);
         scene.getStylesheets().add(TictactoeExample.class.getResource("tictactoe_example.css").toExternalForm());
 
-        primaryStage.show();
     }
 
     private void addComponents() {
@@ -84,7 +84,7 @@ public class TictactoeExample extends Application {
                 btn.setDisable(false);
                 btn.setText("");
             }
-
+            firstPlayer = true;
             btnRestart.setDisable(true);
         });
     }

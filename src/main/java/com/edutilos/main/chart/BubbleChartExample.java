@@ -16,9 +16,9 @@ import java.util.Random;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class BubbleChartExample extends Application{
-    public static void main(String[] args) {
-        launch(args);
+public class BubbleChartExample extends Stage{
+    public BubbleChartExample() {
+        setStage();
     }
 
     //properties
@@ -32,13 +32,12 @@ public class BubbleChartExample extends Application{
     private String[] labels = {"Chrome", "Firefox", "Edge", "Safari"};
 
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+   public void setStage()  {
         addComponents();
         registerEvents();
         scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.setScene(scene);
+
     }
 
     private void addComponents() {

@@ -15,23 +15,23 @@ import javax.script.ScriptException;
 /**
  * Created by edutilos on 14.06.18.
  */
-public class CalculatorExample extends Application {
+public class CalculatorExample extends Stage {
     //properties
     private VBox root;
     private TextArea areaDisplay;
     private GridPane paneControls;
     private Button[] btnControls;
-    public static void main(String[] args) {
-        launch(args);
+
+    public CalculatorExample() {
+        setStage();
     }
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+
+    public void setStage() {
         addComponents();
         registerEvents();
         Scene scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
+        this.setScene(scene);
         scene.getStylesheets().add(CalculatorExample.class.getResource("calculator_example.css").toExternalForm());
-        primaryStage.show();
     }
 
     private void addComponents() {
@@ -69,7 +69,7 @@ public class CalculatorExample extends Application {
                     btnControls[i] = new Button("/");
                     break;
                 case 14:
-                    btnControls[i] = new Button("^");
+                    btnControls[i] = new Button("**");
                     break;
                 case 15:
                     btnControls[i] = new Button("%");
@@ -108,12 +108,12 @@ public class CalculatorExample extends Application {
                     case "-":
                     case "*":
                     case "/":
-                    case "^":
+                    case "**":
                     case "%":
                         areaDisplay.setText(areaDisplay.getText()+ " "+ content + " ");
                         break;
                     case "=":
-                        ScriptEngine se = new ScriptEngineManager().getEngineByName("js");
+                        ScriptEngine se = new ScriptEngineManager().getEngineByName("groovy");
                         try {
                             Object res = se.eval(areaDisplay.getText());
                             areaDisplay.setText(areaDisplay.getText()+ " = "+ res.toString());

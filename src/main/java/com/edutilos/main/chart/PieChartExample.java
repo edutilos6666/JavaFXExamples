@@ -15,9 +15,9 @@ import java.util.Random;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class PieChartExample extends Application{
-    public static void main(String[] args) {
-        launch(args);
+public class PieChartExample extends Stage{
+    public PieChartExample() {
+        setStage();
     }
 
     //properties
@@ -29,13 +29,11 @@ public class PieChartExample extends Application{
     private Random random;
 
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+   public void setStage()  {
         addComponents();
         registerEvents();
         scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.setScene(scene);
     }
 
     private void addComponents() {

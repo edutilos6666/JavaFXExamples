@@ -16,10 +16,7 @@ import javafx.stage.Stage;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class AccordionExample extends Application {
-    public static void main(String[] args) {
-        launch(args);
-    }
+public class AccordionExample extends Stage {
 
     //properties
     private Scene scene;
@@ -27,13 +24,15 @@ public class AccordionExample extends Application {
     private TitledPane tp1, tp2, tp3;
     private Accordion accordion;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
+    public AccordionExample() {
+        setStage();
+    }
+
+    public void setStage() {
         addComponents();
         registerEvents();
         scene = new Scene(root, 500, 500);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        this.setScene(scene);
     }
 
     private void addComponents() {
