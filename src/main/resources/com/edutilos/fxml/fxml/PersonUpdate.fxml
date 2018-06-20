@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edutilos.fxml.controller.PersonUpdateController">
+   <children>
+      <Label fx:id="lblTitle" layoutX="264.0" layoutY="33.0" text="Person Update">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblId" layoutX="143.0" layoutY="81.0" text="Id">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldId" editable="false" layoutX="319.0" layoutY="76.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblName" layoutX="143.0" layoutY="127.0" text="Name">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldName" layoutX="319.0" layoutY="122.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblAge" layoutX="143.0" layoutY="180.0" text="Age">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldAge" layoutX="319.0" layoutY="175.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblWage" layoutX="143.0" layoutY="227.0" text="Wage">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldWage" layoutX="319.0" layoutY="222.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblActive" layoutX="143.0" layoutY="272.0" text="Active">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="fieldActive" layoutX="319.0" layoutY="267.0">
+         <font>
+            <Font name="System Italic" size="15.0" />
+         </font>
+      </TextField>
+      <Button fx:id="btnOK" layoutX="319.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleBtnOK" prefHeight="29.0" prefWidth="87.0" text="OK">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancel" layoutX="438.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleBtnCancel" text="Cancel">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
