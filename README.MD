@@ -6,4 +6,6 @@
 <li>Ubuntu 16.04 LTS</li>
 </ul>
 
-_project dir in my notebook:~/IdeaProjects/JavaFXExamples_
+_project dir in my notebook:~/IdeaProjects/JavaFXExamples_  <br/>
+
+**Bemerkung:** Either run LoginPage or PersonExampleController class <br/>
