@@ -78,14 +78,20 @@
                   <MenuItem fx:id="itemExit" mnemonicParsing="false" onAction="#handleItemExit" text="Exit Application" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu fx:id="menuChart" mnemonicParsing="false" text="Chart">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+              <MenuItem fx:id="itemAreaChart" mnemonicParsing="false" onAction="#handleItemAreaChart" text="AreaChart Example" />
+                  <MenuItem fx:id="itemBarChart" mnemonicParsing="false" onAction="#handleItemBarChart" text="BarChart Example" />
+                  <MenuItem fx:id="itemBubbleChart" mnemonicParsing="false" onAction="#handleItemBubbleChart" text="BubbleChart Example" />
+                  <MenuItem fx:id="itemLineChart" mnemonicParsing="false" onAction="#handleItemLineChart" text="LineChart Example" />
+                  <MenuItem fx:id="itemLineChart2" mnemonicParsing="false" onAction="#handleItemLineChart2" text="LineChart Example 2" />
+                  <MenuItem fx:id="itemPieChart" mnemonicParsing="false" onAction="#handleItemPieChart" text="PieChart Example" />
+                  <MenuItem fx:id="itemScatterChart" mnemonicParsing="false" onAction="#handleItemScatterChart" text="ScatterChart Example" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+          <Menu fx:id="menuHelp" mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="itemAbout" mnemonicParsing="false" onAction="#handleItemAbout" text="About" />
             </items>
           </Menu>
         </menus>

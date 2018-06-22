@@ -6,10 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -42,6 +39,9 @@ public class PersonExampleController {
     private MenuItem itemRemovePerson;
     @FXML
     private MenuItem itemExit;
+
+    @FXML
+    private MenuItem itemAreaChart;
 
 //    private FXMLLoader loader;
 
@@ -110,6 +110,131 @@ public class PersonExampleController {
     private void handleItemExit(ActionEvent evt) {
         System.out.println(evt.getTarget().getClass().getName());
         Platform.exit();
+    }
+
+
+    @FXML
+    private void handleItemAreaChart(ActionEvent evt) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(PersonExampleController.class.getResourceAsStream("../fxml/AreaChartExample.fxml"));
+            AreaChartExampleController controller = loader.getController();
+            controller.afterStartupFinished();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void handleItemBarChart(ActionEvent evt) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(PersonExampleController.class.getResourceAsStream("../fxml/BarChartExample.fxml"));
+            BarChartExampleController controller = loader.getController();
+            controller.afterStartupFinished();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void handleItemBubbleChart(ActionEvent evt) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(PersonExampleController.class.getResourceAsStream("../fxml/BubbleChartExample.fxml"));
+            BubbleChartExampleController controller = loader.getController();
+            controller.afterStartupFinished();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void handleItemLineChart(ActionEvent evt) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(PersonExampleController.class.getResourceAsStream("../fxml/LineChartExample.fxml"));
+            LineChartExample2Controller controller = loader.getController();
+            controller.afterStartupFinished();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleItemLineChart2(ActionEvent evt) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(PersonExampleController.class.getResourceAsStream("../fxml/LineChartExample2.fxml"));
+            LineChartExampleController controller = loader.getController();
+            controller.afterStartupFinished();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleItemPieChart(ActionEvent evt) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(PersonExampleController.class.getResourceAsStream("../fxml/PieChartExample.fxml"));
+            PieChartExampleController controller = loader.getController();
+            controller.afterStartupFinished();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleItemScatterChart(ActionEvent evt) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            AnchorPane root = (AnchorPane)loader.load(PersonExampleController.class.getResourceAsStream("../fxml/ScatterChartExample.fxml"));
+            ScatterChartExampleController controller = loader.getController();
+            controller.afterStartupFinished();
+            Scene scene = new Scene(root);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.showAndWait();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @FXML
+    private void handleItemAbout(ActionEvent evt) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Help Center");
+        alert.setContentText("Currently no help is available");
+        alert.showAndWait();
     }
 
 

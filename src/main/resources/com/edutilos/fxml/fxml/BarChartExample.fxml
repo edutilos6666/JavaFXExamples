@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.edutilos.fxml.controller.BarChartExampleController">
+   <children>
+      <Label fx:id="lblTitle" layoutX="250.0" layoutY="33.0" text="BarChart Example">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="chartBar" layoutX="36.0" layoutY="55.0" prefHeight="288.0" prefWidth="517.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <Button fx:id="btnChange" layoutX="102.0" layoutY="357.0" mnemonicParsing="false" onAction="#handleBtnChange" text="Change BarChart">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

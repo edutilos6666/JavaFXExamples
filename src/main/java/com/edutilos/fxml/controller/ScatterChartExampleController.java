@@ -1,10 +1,10 @@
-package com.edutilos.main.chart;
+package com.edutilos.fxml.controller;
 
-import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -16,40 +16,23 @@ import java.util.Random;
 /**
  * Created by edutilos on 10.06.18.
  */
-public class BarChartExample extends Stage{
-    public BarChartExample() {
-        setStage();
-    }
-
-    //properties
-    private Scene scene;
-    private VBox root;
+public class ScatterChartExampleController {
+    @FXML
     private Label lblTitle;
-    private BarChart chart;
+    @FXML
+    private ScatterChart chartScatter;
+    @FXML
     private Button btnChange;
     private Random random;
     private int counter = 0 ;
     private String[] barLabels = {"Chrome", "Firefox", "Edge", "Safari", "IE10", "IE11"};
-    private String[] mainLabels = {"Year 2010","Year 2011", "Year 2012", "Year 2013" };
+    private String[] mainLabels = {"Year 2010","Year 2011", "Year 2011", "Year 2012" };
 
-   public void setStage()  {
-        addComponents();
-        registerEvents();
-        scene = new Scene(root, 500, 500);
-        this.setScene(scene);
-    }
 
-    private void addComponents() {
-        root = new VBox();
-        root.setSpacing(10);
-        lblTitle = new Label("BarChart for Browsers");
-        CategoryAxis xAxis = new CategoryAxis();
-        NumberAxis yAxis = new NumberAxis();
-        chart = new BarChart(xAxis, yAxis);
-        chart.getData().add(getDataForChart(mainLabels[counter]));
-        btnChange = new Button("Change BarChart");
-        root.getChildren().clear();
-        root.getChildren().addAll(lblTitle, chart, btnChange);
+
+
+    public void afterStartupFinished() {
+        chartScatter.getData().add(getDataForChart(mainLabels[counter]));
     }
 
     private double generateRandomValue() {
@@ -71,20 +54,19 @@ public class BarChartExample extends Stage{
 
 
 
-    private void registerEvents() {
-        btnChange.setOnAction(handler-> {
+    @FXML
+    private void handleBtnChange() {
             counter = (counter+1)%4;
             switch(counter) {
                 case 0:
                 case 1:
                 case 2:
-                    chart.getData().add(getDataForChart(mainLabels[counter]));
+                    chartScatter.getData().add(getDataForChart(mainLabels[counter]));
                     break;
                 case 3:
-                    chart.getData().clear();
-                    chart.getData().add(getDataForChart(mainLabels[counter]));
+                    chartScatter.getData().clear();
+                    chartScatter.getData().add(getDataForChart(mainLabels[counter]));
                     break;
             }
-        });
     }
 }
